@@ -1,4 +1,5 @@
 class Itinerary < ApplicationRecord
   belongs_to :user
-  belongs_to :sight
+  has_many :stops, dependent: :destroy
+  has_many :sights, through: :stops
 end

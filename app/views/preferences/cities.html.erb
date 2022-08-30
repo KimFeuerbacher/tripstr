@@ -1,0 +1,14 @@
+<%= session[:city] %>
+
+<%# insert the search bar %>
+
+<div class="container">
+  <%= form_with url: choose_duration_path, method: :get, class: "d-flex" do |form| %>
+  <%=
+    form.select :city, ["Berlin", "Chicago", "Madrid"]
+  %>
+  <%= submit_tag "Ok", class: "btn btn-primary" %>
+  <% end %>
+
+
+</div>

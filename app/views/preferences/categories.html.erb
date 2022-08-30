@@ -1,0 +1,15 @@
+<p><%= session[:city] %></p>
+<p><%= session[:duration] %></p>
+
+<div class="container">
+  <%= form_with url: result_path, method: :get, class: "d-flex" do |form| %>
+  <%=
+    form.select :categories, ["Museum", "Nightlife"]
+  %>
+  <%= submit_tag "Ok", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<%# from here, we needed an intermediary page where we could 'land' with the info
+saved by the session, and from where we could perform the search. we called it
+sights/sights_home.html.erb %>

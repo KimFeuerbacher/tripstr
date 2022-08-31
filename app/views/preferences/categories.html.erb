@@ -2,14 +2,11 @@
 <p><%= session[:duration] %></p>
 
 <div class="container">
-  <%= form_with url: get_results_path, method: :get, class: "d-flex" do |form| %>
-  <%=
-    form.select :categories, ["Museum", "Nightlife"]
-  %>
-  <%= submit_tag "Ok", class: "btn btn-primary" %>
+  <%= form_tag get_results_path, method: :get, class: "d-flex" do |form| %>
+    <% @all_categories.each do |category| %>
+      <%= check_box_tag 'categories[]', category %>
+      <%= label_tag(category) %>
+    <% end %>
+  <%= submit_tag "Okay", class: "btn btn-primary" %>
   <% end %>
 </div>
-
-<%# from here, we needed an intermediary page where we could 'land' with the info
-saved by the session, and from where we could perform the search. we called it
-sights/sights_home.html.erb %>

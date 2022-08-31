@@ -2,7 +2,7 @@
 <p><%= session[:duration] %></p>
 
 <div class="container">
-  <%= form_with url: result_path, method: :get, class: "d-flex" do |form| %>
+  <%= form_with url: get_results_path, method: :get, class: "d-flex" do |form| %>
   <%=
     form.select :categories, ["Museum", "Nightlife"]
   %>

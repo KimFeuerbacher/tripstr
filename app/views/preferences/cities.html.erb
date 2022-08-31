@@ -3,12 +3,20 @@
 <%# insert the search bar %>
 
 <div class="container">
-  <%= form_with url: choose_duration_path, method: :get, class: "d-flex" do |form| %>
-  <%=
-    form.select :city, ["Berlin", "Chicago", "Madrid"]
-  %>
-  <%= submit_tag "Ok", class: "btn btn-primary" %>
+  <%# <%= form_with  do |form| %>
+  <%# <%= %>
+    <%# form.select :city, ["Berlin", "Chicago", "Madrid"] %>
+  <%#
+  <%# <%= submit_tag "Ok", class: "btn btn-primary"
+  <%# <% end %>
+
+  <%= simple_form_for :city, url: choose_duration_path, method: :get, class: "d-flex" do |f| %>
+  <%= f.input :city, collection: City.all %>
+  <%= f.button :button do %>
+    <% "OK" %>
+    <% end %>
   <% end %>
+
 
 
 </div>

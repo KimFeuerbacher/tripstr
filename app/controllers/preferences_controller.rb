@@ -14,11 +14,29 @@ class PreferencesController < ApplicationController
 
   def result
     session[:categories] = params[:categories]
-    @city = session[:city]
+
+    # packing up our values real pretty for filtering
+    @city = City.find(session[:city]["city_id"])
     @duration = session[:duration]
     @categories = session[:categories]
 
-    @results = City.find.where()
+    results = {
+      city: @city,
+      duration: @duration,
+      categories: @categories
+    }
+
+    filter(results)
+
+
+
+
+    # @city = session[:city]
+    # @duration = session[:duration]
+    # @categories = session[:categories]
+
+    # @results = Sight.where()
+
 
     # what we need from this is an array with the sight_ids of the sights that
     # match our search criteria
@@ -26,4 +44,11 @@ class PreferencesController < ApplicationController
     # do the filtering thing here
     # redirect_to first @results.first
   end
+
+  private
+
+  def filter(results)
+
+  end
+
 end

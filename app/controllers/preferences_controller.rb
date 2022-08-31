@@ -10,33 +10,18 @@ class PreferencesController < ApplicationController
 
   def categories
     session[:duration] = params[:duration]
+    @all_categories = Category.all.map(&:title)
   end
 
   def result
     session[:categories] = params[:categories]
 
     # packing up our values real pretty for filtering
-    @city = City.find(session[:city]["city_id"])
+    @city = City.find(session[:city]["city"])
     @duration = session[:duration]
     @categories = session[:categories]
 
-    results = {
-      city: @city,
-      duration: @duration,
-      categories: @categories
-    }
-
-    filter(results)
-
-
-
-
-    # @city = session[:city]
-    # @duration = session[:duration]
-    # @categories = session[:categories]
-
-    # @results = Sight.where()
-
+    filter(@city, @duration, @categories)
 
     # what we need from this is an array with the sight_ids of the sights that
     # match our search criteria
@@ -47,8 +32,7 @@ class PreferencesController < ApplicationController
 
   private
 
-  def filter(results)
+  def filter(city, duration, categories)
 
   end
-
 end

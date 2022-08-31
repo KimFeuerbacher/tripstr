@@ -1,0 +1,12 @@
+<%= session[:city] %>
+
+<div class="container">
+  <%= form_with url: choose_categories_path, method: :get, class: "d-flex" do |form| %>
+  <%=
+    form.select :duration, ["Half day", "One full day"]
+  %>
+  <%= submit_tag "Ok", class: "btn btn-primary" %>
+  <% end %>
+
+
+</div>

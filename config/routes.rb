@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :cities, only: :index
+  # resources :cities, only: :index
   resources :preferences, only: :index
   resources :sights, only: :show do
     resources :stops, only: :create
@@ -10,4 +10,13 @@ Rails.application.routes.draw do
   resources :itineraries, only: [:show, :index] do
     resources :stops, only: :show
   end
+
+  # preference route
+  get "/cities", to: "preferences#cities", as: :choose_city
+  get "/duration", to: "preferences#duration", as: :choose_duration
+  get "/categories", to: "preferences#categories", as: :choose_categories
+  get "/result", to: "preferences#result", as: :get_results
+
+  # we have big problem here!!
+  # get "/sights_home", to: "sights#home", as: :choose_categories
 end

@@ -1,3 +1,10 @@
 <p><%= @city.name %></p>
 <p><%= @duration %></p>
 <p><%= @categories %></p>
+
+<% @sights.each do |sight| %>
+  <%= sight.name %>
+  <% sight.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<%end %>

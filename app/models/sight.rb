@@ -5,4 +5,6 @@ class Sight < ApplicationRecord
   has_many_attached :photos
   validates :name, :latitude, :longitude, :address, presence: true, uniqueness: true
   validates :short_description, :long_description, presence: true
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
 end

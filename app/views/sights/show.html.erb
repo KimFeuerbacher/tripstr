@@ -4,7 +4,7 @@
 <div class='container'>
   <%# No 🙅🏾‍♀️ %>
   <div>
-    <%= link_to sight_sorting_path, params: {sight: @sight} do %>
+    <%= link_to sight_sorting_path(sight: @sight) do %>
       <i class="fa-solid fa-xmark"></i>
     <% end %>
   </div>

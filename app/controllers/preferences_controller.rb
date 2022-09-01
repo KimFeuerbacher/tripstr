@@ -40,10 +40,10 @@ class PreferencesController < ApplicationController
   private
 
   def filter(city, categories)
-    if @rejected_ids.length.zero? && @approved_ids.length.zero?
-      Sight.where(city: city, category: categories)
-    else
-      Sight.where(city: city, category: categories).where.not(id: @rejected_ids).where.not(id: @approved_ids)
-    end
+
+    sights = Sight.where(city: city, category: categories)
+    sights = sights.where.not(id: @rejected_ids) unless @rejected_ids.length.zero?
+    sights = sights.where.not(id: @approved_ids) unless @approved_ids.length.zero?
+    sights
   end
 end

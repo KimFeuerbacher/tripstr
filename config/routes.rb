@@ -15,8 +15,5 @@ Rails.application.routes.draw do
   get "/cities", to: "preferences#cities", as: :choose_city
   get "/duration", to: "preferences#duration", as: :choose_duration
   get "/categories", to: "preferences#categories", as: :choose_categories
-  get "/result", to: "preferences#result", as: :get_results
-
-  # we have big problem here!!
-  # get "/sights_home", to: "sights#home", as: :choose_categories
+  get "/sight_sorting", to: "preferences#sight_sorting"
 end

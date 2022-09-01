@@ -2,7 +2,7 @@
 <p><%= session[:duration] %></p>
 
 <div class="container">
-  <%= form_tag get_results_path, method: :get, class: "d-flex" do |form| %>
+  <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
     <% @all_categories.each do |category| %>
       <%= check_box_tag 'categories[]', category %>
       <%= label_tag(category) %>

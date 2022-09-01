@@ -1,5 +1,9 @@
 class PreferencesController < ApplicationController
   def cities
+    @cities = City.all
+    if params[:city]
+      @cities = City.search_by_name(params[:city])
+    end
   end
 
   def duration

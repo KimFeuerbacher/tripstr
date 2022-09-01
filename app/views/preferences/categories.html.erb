@@ -1,12 +1,20 @@
+
+<div class='container'>
+  <p>featured cities</p>
+  <div class="d-flex p-2 align-items-center">
+    <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
+      <% @all_categories.each do |category| %>
+        <div>
+          <%= check_box_tag 'categories[]', category %>
+          <%= label_tag(category) %>
+        </div>
+      <% end %>
+    <div>
+      <%= submit_tag "Okay", class: "btn btn-primary" %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
 <p><%= session[:city] %></p>
 <p><%= session[:duration] %></p>
-
-<div class="container">
-  <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
-    <% @all_categories.each do |category| %>
-      <%= check_box_tag 'categories[]', category %>
-      <%= label_tag(category) %>
-    <% end %>
-  <%= submit_tag "Okay", class: "btn btn-primary" %>
-  <% end %>
-</div>

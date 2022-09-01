@@ -11,7 +11,8 @@ class ItinerariesController < ApplicationController
     @markers = @sights.geocoded.map do |sight|
       {
         lat: sight.latitude,
-        lng: sight.longitude
+        lng: sight.longitude,
+        name: sight.name
       }
     end
   end

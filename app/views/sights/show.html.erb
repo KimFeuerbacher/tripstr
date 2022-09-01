@@ -1,3 +1,20 @@
-<p><%= session[:city] %></p>
-<p><%= session[:duration] %></p>
-<p><%= session[:categories] %></p>
+<p><%= @sight.name %></p>
+<p><%= @sight.category %></p>
+
+<div class='container'>
+  <%# No 🙅🏾‍♀️ %>
+  <div>
+    <%= link_to sight_sorting_path, params: {sight: @sight} do %>
+      <i class="fa-solid fa-xmark"></i>
+    <% end %>
+  </div>
+
+  <%# Yes ✌🏾 %>
+  <div>
+    <%= link_to sight_stops_path(@sight), params: {sight: @sight}, data: { turbo_method: :post} do %>
+      <i class="fa-solid fa-check"></i>
+    <% end %>
+  </div>
+</div>
+
+<%= cl_image_tag @sight.photos.first.key %>

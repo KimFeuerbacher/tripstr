@@ -12,7 +12,9 @@ class ItinerariesController < ApplicationController
       {
         lat: sight.latitude,
         lng: sight.longitude,
-        name: sight.name
+        name: sight.name,
+        info_window: render_to_string(partial: "info_window", locals: {sight: sight}),
+        img: sight.photos.attached? ? helpers.cl_image_path(sight.photos.first.key, width: 150, height: 150, crop: :fill) : "https://i.imgflip.com/6hf6ez.jpg",
       }
     end
   end

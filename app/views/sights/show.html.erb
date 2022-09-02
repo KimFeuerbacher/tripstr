@@ -1,20 +1,17 @@
-<p><%= @sight.name %></p>
-<p><%= @sight.category %></p>
+<h2><%= @sight.name %></h2>
+<p><% @sight.category %></p>
+<p><%= @sight.short_description%></p>
 
-<div class='container'>
+<%= cl_image_tag @sight.photos.first.key, width: 400, height: 250%>
+
+<div class='container p-3'>
   <%# No 🙅🏾‍♀️ %>
-  <div>
     <%= link_to sight_sorting_path(sight: @sight) do %>
       <i class="fa-solid fa-xmark"></i>
     <% end %>
-  </div>
 
   <%# Yes ✌🏾 %>
-  <div>
     <%= link_to sight_stops_path(@sight), params: {sight: @sight}, data: { turbo_method: :post} do %>
       <i class="fa-solid fa-check"></i>
     <% end %>
-  </div>
 </div>
-
-<%= cl_image_tag @sight.photos.first.key %>

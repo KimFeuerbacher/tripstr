@@ -10,3 +10,22 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// Style present on application.html.css
+.app-background {
+  height: 900px;
+  background-size: cover;
+}
+
+.app-light-text {
+  font-weight: 300;
+}
+
+.app-italic {
+  font-style: italic;
+}
+
+.app-background-color {
+  background-color: white !important;
+}

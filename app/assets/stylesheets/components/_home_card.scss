@@ -1,15 +1,24 @@
-.card-category {
+.home-card-category {
   height: 900px;
   background-size: cover;
 
-  .tripstr-homeimg-wrapper{
+  .tripstr-logo-wrapper {
     display: flex;
     justify-content: center;
   }
 
+  .tripstr-logo-text {
+    height: 45px;
+  }
+
+  .tripstr-homeimg-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+
   .tripstr-homeimg {
-    width: 177.42px;
-    height: 200px;
+    width: 200px;
   }
 
   .title {
@@ -56,21 +65,23 @@
     font-weight: bolder;
   }
 
-  .btn{
-    width: 209px;
-    height: 54px;
+  .btn {
+    width: 240px;
+    height: 56px;
     left: 76px;
     top: 579px;
-    background-color: #04DCD8;
+    background-color: $light-turquoise;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding-top: 0.7rem !important;
     a {
       text-decoration: none;
       color: white;
-      font-size: 22px;
+      font-size: 20px;
+      margin-top: 2px
     }
   }
-}
 
-.light-text {
-  font-weight: 300;
+  .btn:hover {
+    background-color: $petrol;
+  }
 }

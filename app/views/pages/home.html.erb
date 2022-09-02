@@ -1,19 +1,21 @@
-<div class="card-category" style="background-image: url('<%= image_path 'tripstr-background.png' %>')">
+<div class="home-card-category" style="background-image: url('<%= image_path 'tripstr-background.png' %>')">
   <div class="tripstr-overview mt-5">
-    <div class="title my-3">
-      <h2>tripstr</h2>
-    </div>
-    <div class="tripstr-homeimg-wrapper">
-      <%= image_tag "tripstr-diamond.png", class: "tripstr-homeimg" %>
+    <div class="container d-flex flex-column mt-5 p-5">
+      <div class="tripstr-logo-wrapper">
+        <%= image_tag "tripstr-text-petrol-dot.png", class:"tripstr-logo-text" %>
+      </div>
+      <div class="tripstr-homeimg-wrapper mt-5">
+        <%= image_tag "tripstr-diamond.png", class: "tripstr-homeimg" %>
+      </div>
     </div>
     <div class="subheading my-4" >
       <h3>plan your city trips<br>
       without a hassle</h3>
       <div class="description">
-        <p class="light-text p-4">we show you the coolest places <br>
+        <p class="app-light-text p-4">we show you the coolest places <br>
         and create the best route.</p>
         <p class="trip-tagline">you just enjoy your trip</p>
-        <div class="btn btn-primary">
+        <div class="btn mt-5">
         <%= link_to "start exploring", choose_city_path %>
       </div>
     </div>

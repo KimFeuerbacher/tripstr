@@ -1,3 +1,25 @@
-<h1>Pages#home</h1>
+<div class="container">
+  <div class="card-category" style="background-image: url('<%= image_path 'tripstr-background.png' %>')">
+    <div class="tripstr-overview">
+      <div class="title">
+        <h2>tripstr</h2>
+      </div>
+      <div class="tripstr-homeimg-wrapper">
+        <%= image_tag "tripstr-diamond.png", class: "tripstr-homeimg" %>
+      </div>
+      <div class="subheading my-4" >
+        <h3>Plan your city trips<br>
+        without a hassle</h3>
+        <div class="description">
+          <p> We show you the coolest places <br>
+          and create the best route.</p>
+          <p>You just enjoy your trip</p>
+          <div class="btn btn-primary">
+            <%= link_to "Start exploring", choose_city_path %>
+          </div>
+        </div>
 
-<%= session[:city] %>
+      </div>
+    </div>
+  </div>
+</div>

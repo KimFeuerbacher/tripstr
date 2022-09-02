@@ -1,5 +1,4 @@
 <div class='container'>
-  <p>featured cities</p>
   <div class="d-flex p-2 align-items-center">
     <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
       <% @all_categories.each do |category| %>
@@ -15,5 +14,32 @@
   </div>
 </div>
 
-<p><%= session[:city] %></p>
-<p><%= session[:duration] %></p>
+<p><% session[:city] %></p>
+<p><% session[:duration] %></p>
+
+<div class="grid_categories">
+  <div class="clickable">
+    <div><img src="/app/assets/images/interest_icons/Fun&Games.png" alt="Entertainment"></div>
+    <div class="category_font">entertainment</div>
+  </div>
+  <div class="clickable">
+    <div><img src="../assets/images/interest_icons/Fun&Games.png" alt="Entertainment"></div>
+    <div class="category_font">nature & parks</div>
+  </div>
+  <div class="clickable">
+    <div ><img src="../assets/images/interest_icons/Fun&Games.png" alt="Entertainment"></div>
+    <div class="category_font">sights</div>
+  </div>
+  <div class="clickable">
+    <div><img src="../assets/images/interest_icons/Fun&Games.png" alt="Entertainment"></div>
+    <div class="category_font">fun & games</div>
+  </div>
+  <div class="clickable">
+    <div><img src="../assets/images/interest_icons/Fun&Games.png" alt="Entertainment"></div>
+    <div class="category_font">wellness</div>
+  </div>
+  <div class="clickable">
+    <div><img src="../assets/images/interest_icons/Fun&Games.png" alt="Entertainment"></div>
+    <div class="category_font">nightlife</div>
+  </div>
+</div>

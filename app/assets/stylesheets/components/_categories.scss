@@ -1,0 +1,44 @@
+.category_font {
+font-family: 'Lato';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+color: #007691;
+}
+
+.grid_categories {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 8px;
+}
+
+.clickable {
+  padding: 40px;
+  width: 220px;
+  border: 1px solid #dedede;
+  color: #a0a0a0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.clickable i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.clickable:hover i {
+  color: #52ACF4;
+}
+
+.clickable.active {
+  color: inherit;
+  border-color: inherit;
+}
+
+.clickable.active i {
+  color: #52ACF4;
+}

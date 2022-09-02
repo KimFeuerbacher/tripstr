@@ -1,5 +1,5 @@
 <div class='container'>
-  <p>featured cities</p>
+ <h2 class="mt-3">what are your <span class="petrol_word">interests?</span></h2>
   <div class="d-flex p-2 align-items-center">
     <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
       <% @all_categories.each do |category| %>
@@ -15,5 +15,32 @@
   </div>
 </div>
 
-<p><%= session[:city] %></p>
-<p><%= session[:duration] %></p>
+<p><% session[:city] %></p>
+<p><% session[:duration] %></p>
+
+<div class="grid_categories">
+  <div class="clickable">
+    <div><%= image_tag "interest_icons/Entertainment.png" %></div>
+    <div class="category_font">entertainment</div>
+  </div>
+  <div class="clickable">
+    <div><%= image_tag "interest_icons/Nature&Parks.png" %></div>
+    <div class="category_font">nature & parks</div>
+  </div>
+  <div class="clickable">
+    <div ><%= image_tag "interest_icons/Sights&Landmarks.png" %></div>
+    <div class="category_font">sights</div>
+  </div>
+  <div class="clickable">
+    <div><%= image_tag "interest_icons/Fun&Games.png" %></div>
+    <div class="category_font">fun & games</div>
+  </div>
+  <div class="clickable">
+    <div><%= image_tag "interest_icons/Wellness.png" %></div>
+    <div class="category_font">wellness</div>
+  </div>
+  <div class="clickable">
+    <div><%= image_tag "interest_icons/Nightlife.png" %></div>
+    <div class="category_font">nightlife</div>
+  </div>
+</div>

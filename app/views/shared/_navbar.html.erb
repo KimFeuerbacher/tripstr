@@ -1,10 +1,18 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
+
+    <%# back button - pending: implement back navigation%>
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <i class="fa-duotone fa-angles-left"></i>
     <% end %>
 
+    <%# add here search icon to home %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <i class="fa-regular fa-magnifying-glass"></i>
+    <% end %>
+    <%# user menu %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <%# replace with person's pic %>
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -34,3 +42,7 @@
     </div>
   </div>
 </div>
+
+
+<%# <i class="fa-regular fa-magnifying-glass"></i> %>
+<%# <i class="fa-duotone fa-angles-left"></i> %>

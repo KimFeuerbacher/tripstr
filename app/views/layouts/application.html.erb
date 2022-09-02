@@ -14,10 +14,14 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
     <div class="container-sm">
-      <%= render "shared/flashes" %>
-      <%= yield %>
+      <% unless @no_nav %>
+        <%= render "shared/navbar" %>
+      <% end %>
+      <div>
+        <%= render "shared/flashes" %>
+        <%= yield %>
+    </div>
     </div>
   </body>
 </html>

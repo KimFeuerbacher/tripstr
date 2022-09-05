@@ -10,7 +10,7 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v11",
+      style: "mapbox://styles/kimfeuerbacher/cl7outy7f001514lfucvxoa2r",
     });
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
@@ -68,7 +68,7 @@ export default class extends Controller {
         'line-cap': 'round'
       },
       paint: {
-        'line-color': '#3887be',
+        'line-color': '#F50441',
         'line-width': 5,
         'line-opacity': 0.75
       }

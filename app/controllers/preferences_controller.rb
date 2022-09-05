@@ -45,6 +45,7 @@ class PreferencesController < ApplicationController
     end
 
     @sights = filter(@city, @categories)
+    raise
     redirect_to sight_path(@sights.sample)
   end
 

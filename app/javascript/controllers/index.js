@@ -12,14 +12,15 @@ application.register("map", MapController)
 
 
 //clickablity of categories
-const interest = document.querySelectorAll('.clickable');
+// const interest = document.querySelectorAll('.clickable');
 
-const toggleActiveClass = (event) => {
-  event.currentTarget.classList.toggle('active');
-};
+// const toggleActiveClass = (event) => {
+//   event.currentTarget.classList.toggle('active')
+//   console.log(localStorage, event);
+// };
 
-const toggleActiveOnClick = (interest) => {
-  interest.addEventListener('click', toggleActiveClass);
-};
+// const toggleActiveOnClick = (interest) => {
+//   interest.addEventListener('click', toggleActiveClass);
+// };
 
-interest.forEach(toggleActiveOnClick);
+// interest.forEach(toggleActiveOnClick);

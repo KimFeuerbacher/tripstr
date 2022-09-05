@@ -13,6 +13,7 @@ class PreferencesController < ApplicationController
   def categories
     session[:duration] = params[:duration]
     @all_categories = Category.all.map(&:title)
+    @all_categories_instances = Category.all
   end
 
   def sight_sorting
@@ -51,6 +52,7 @@ class PreferencesController < ApplicationController
 
   def filter(city, categories)
     sights = Sight.where(city: city, category: categories)
+
     sights = sights.where.not(id: @rejected_ids) unless @rejected_ids.length.zero?
     sights = sights.where.not(id: @approved_ids) unless @approved_ids.length.zero?
     if sights.length.zero?

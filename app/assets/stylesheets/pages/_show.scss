@@ -1,0 +1,21 @@
+.show-container{
+  .card-decide {
+    display: flex;
+    justify-content:space-around;
+    position: relative;
+  }
+
+  .show-img {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .swipe{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+}

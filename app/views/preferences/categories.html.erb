@@ -3,21 +3,23 @@
 
 <div class='container'>
   <h2 class="mt-3">what are your <span class="petrol_word">interests?</span></h2>
-<div class="grid_categories">
-  <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
-    <% @all_categories_instances.each do |category| %>
-     <div class="checkbox">
-        <label class="checkbox-wrapper">
-          <span class="checkbox-tile">
-           <%= check_box_tag 'categories[]', category.title %>
-            <%= cl_image_tag category.photo.key, class: "size" %>
-          <span class="checkbox-label"><%= category.title %></span>
-          </span>
-       </label>
+</div>
+  <div class="row">
+    <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
+      <% @all_categories_instances.each do |category| %>
+        <div class="checkbox col-sm">
+          <label class="checkbox-wrapper">
+            <span class="checkbox-tile">
+              <%= check_box_tag 'categories[]', category.title %>
+              <%= cl_image_tag category.photo.key, class: "size" %>
+            <span class="checkbox-label"><%= category.title %></span>
+            </span>
+          </label>
+        </div>
+      <% end %>
+      <div>
+        <%= submit_tag "Okay", class: "btn btn-primary" %>
       </div>
     <% end %>
-   <div>
-    <%= submit_tag "Okay", class: "btn btn-primary" %>
-    </div>
-  <% end %>
+  </div>
 </div>

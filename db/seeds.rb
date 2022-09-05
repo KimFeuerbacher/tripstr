@@ -35,11 +35,28 @@ london.photo.attach(io: l, filename: "Barcelona.png", content_type: "image/png")
 
 #Categories
 nature_parks = Category.create(title: "Nature & Parks")
+nature_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662365763/development/Nature_Parks-lg_mphwap.png')
+nature_parks.photo.attach(io: nature_photo, filename: "Nature&Parks_icon.png", content_type: "image/png")
+
 sights_landmarks = Category.create(title: "Sights & Landmarks")
+sight_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662365763/development/Sights_Landmarks-lg_qlvtra.png')
+sights_landmarks.photo.attach(io: sight_photo, filename: "Sights&Landmarks_icon.png", content_type: "image/png")
+
 nightlife = Category.create(title: "Nightlife")
+nightlife_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662369763/development/Nightlife-lg_qfx6fz.png')
+nightlife.photo.attach(io: nightlife_photo, filename: "nightlife_icon.png", content_type: "image/png")
+
 fun_games = Category.create(title: "Fun & Games")
+fun_games_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662365763/development/Fun_Games-lg_dys574.png')
+fun_games.photo.attach(io: fun_games_photo, filename: "fun_games_icon.png", content_type: "image/png")
+
 wellness = Category.create(title: "Wellness")
+wellness_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662365763/development/Wellness-lg_zrw0z5.png')
+wellness.photo.attach(io: wellness_photo, filename: "wellness_icon.png", content_type: "image/png")
+
 zoos_aquariums = Category.create(title: "Zoos & Aquariums")
+zoos_aquariums_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662368797/development/zoos_aquariums_slajnn.png')
+zoos_aquariums.photo.attach(io: zoos_aquariums_photo, filename: "zoos_aquariums_icon.png", content_type: "image/png")
 
 #Sights_for_Munich
 #Marienplatz

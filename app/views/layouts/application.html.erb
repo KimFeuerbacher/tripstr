@@ -13,11 +13,17 @@
 
   </head>
 
-  <body>
-    <%= render "shared/navbar" %>
-    <div class="container-sm">
-      <%= render "shared/flashes" %>
+  <body class="app-background-color">
+    <% if @no_nav %>
       <%= yield %>
+    <% else %>
+    <div class="app-background" style="background-image: linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url('<%= image_path 'tripstr-background.png' %>')">
+      <div class="container-sm">
+        <%= render "shared/navbar" %>
+        <%= render "shared/flashes" %>
+        <%= yield %>
+      </div>
     </div>
+    <% end %>
   </body>
 </html>

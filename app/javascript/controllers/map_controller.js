@@ -35,6 +35,17 @@ export default class extends Controller {
 
   #popup(marker) {
     console.log(marker)
+    const html =   `  <div class="map-content">
+    <h2>${marker.description}</h2>
+  </div>`;
+    //const popup_down = document.querySelector(".map-popup")
+    const popup_down = document.querySelector("#map-container")
+    const child = document.createElement("div")
+    child.className = "map-popup"
+    child.innerHTML = html
+    popup_down.appendChild(child)
+   
+
   }
 
   #fitMapToMarkers() {

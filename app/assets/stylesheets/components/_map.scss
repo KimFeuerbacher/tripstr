@@ -15,3 +15,12 @@
   border-radius: 50%;
   background-size: contain;
 }
+
+.map-popup {
+  background-color: red;
+    z-index: 999;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 60px;
+}

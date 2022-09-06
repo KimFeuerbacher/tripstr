@@ -25,29 +25,26 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-</div>
-    <div class="swipe">
-      <%= image_tag "swipe-left.png" %>
-      <%= image_tag "swipe-right.png" %>
     </div>
   </div>
 
+    <div class='card-decide mt-5'>
+    <%# No 🙅🏾‍♀️ %>
+      <%= link_to sight_sorting_path(sight: @sight) do %>
+        <%= image_tag "discard.png", class: "discard-sight" %>
+      <% end %>
+    <%# Yes ✌🏾 %>
+      <%= link_to sight_stops_path(@sight), params: {sight: @sight}, data: { turbo_method: :post} do %>
+        <%= image_tag "accept.png", class: "accept-sight" %>
+      <% end %>
+    </div>
+
   <div class="card-description m-3">
-    <h1><%= @sight.name %></h1>
-    <p><% @sight.category %></p>
+    <div class="description">
+      <h1><%= @sight.name %></h1>
+      <%= cl_image_tag @sight.category.photo.key, class: "size" %>
+    </div>
     <h4><%= @sight.short_description%></h4>
     <p><%= @sight.long_description%></p>
   </div>
-
-  <div class='card-decide mt-5'>
-    <%# No 🙅🏾‍♀️ %>
-    <%= link_to sight_sorting_path(sight: @sight) do %>
-      <%= image_tag "discard.png", class: "discard-sight" %>
-    <% end %>
-    <%# Yes ✌🏾 %>
-    <%= link_to sight_stops_path(@sight), params: {sight: @sight}, data: { turbo_method: :post} do %>
-      <%= image_tag "accept.png", class: "accept-sight" %>
-    <% end %>
-  </div>
-
 </div>

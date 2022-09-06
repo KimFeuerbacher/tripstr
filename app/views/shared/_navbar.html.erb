@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%# back button - pending: implement back navigation%>
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to 'Back', onclick: "window.history.back();", class: "navbar-brand" do %>
       <%= image_tag "back-icon.png", class:"nav-back-btn" %>
     <% end %>
 

@@ -23,7 +23,13 @@
       <% "OK" %>
       <% end %>
     <% end %>
+  </div>
 </div>
-</div>
+
+<% @cities.each do |city| %>
+  <div class="card-category mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path city.photo.key %>')">
+    <span><%= city.name%></span>
+  </div>
+<% end %>
 
 <% session[:city] %>

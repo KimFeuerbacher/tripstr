@@ -17,5 +17,24 @@
     justify-content: center;
   }
 
+  .card-description {
+    .description {
+      display: flex;
+      justify-content: space-between;
+    h1{
+        font-family: 'Lato';
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+    h4{
+      font-family: 'Lato';
+      margin-top: 5px;
+      color: #007691;
+    }
+    p {
 
+      font-family: 'Lato';
+    }
+  }
 }

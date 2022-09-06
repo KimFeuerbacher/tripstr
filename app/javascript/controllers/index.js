@@ -10,17 +10,5 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-
-//clickablity of categories
-// const interest = document.querySelectorAll('.clickable');
-
-// const toggleActiveClass = (event) => {
-//   event.currentTarget.classList.toggle('active')
-//   console.log(localStorage, event);
-// };
-
-// const toggleActiveOnClick = (interest) => {
-//   interest.addEventListener('click', toggleActiveClass);
-// };
-
-// interest.forEach(toggleActiveOnClick);
+import PreferencesController from "./preferences_controller"
+application.register("preferences", PreferencesController)

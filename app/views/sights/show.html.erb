@@ -1,17 +1,53 @@
-<h2><%= @sight.name %></h2>
-<p><% @sight.category %></p>
-<p><%= @sight.short_description%></p>
+<div class="show-container">
+  <div class="sight-card">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <%= cl_image_tag @sight.photos.first.key, :alt=>"First slide", class: "show-img d-block w-100"  %>
+        </div>
+        <div class="carousel-item">
+          <%= cl_image_tag @sight.photos.second.key, :alt=>"Second slide", class: "show-img d-block w-100"  %>
+        </div>
+        <div class="carousel-item">
+          <%= cl_image_tag @sight.photos.third.key, :alt=>"Second slide", class: "show-img d-block w-100"  %>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+</div>
+    <div class="swipe">
+      <%= image_tag "swipe-left.png" %>
+      <%= image_tag "swipe-right.png" %>
+    </div>
+  </div>
 
-<%= cl_image_tag @sight.photos.first.key, width: 400, height: 250%>
+  <div class="card-description m-3">
+    <h1><%= @sight.name %></h1>
+    <p><% @sight.category %></p>
+    <h4><%= @sight.short_description%></h4>
+    <p><%= @sight.long_description%></p>
+  </div>
 
-<div class='container p-3'>
-  <%# No 🙅🏾‍♀️ %>
+  <div class='card-decide mt-5'>
+    <%# No 🙅🏾‍♀️ %>
     <%= link_to sight_sorting_path(sight: @sight) do %>
-      <i class="fa-solid fa-xmark"></i>
+      <%= image_tag "discard.png", class: "discard-sight" %>
     <% end %>
-
-  <%# Yes ✌🏾 %>
+    <%# Yes ✌🏾 %>
     <%= link_to sight_stops_path(@sight), params: {sight: @sight}, data: { turbo_method: :post} do %>
-      <i class="fa-solid fa-check"></i>
+      <%= image_tag "accept.png", class: "accept-sight" %>
     <% end %>
+  </div>
+
 </div>

@@ -1,0 +1,16 @@
+
+<% @itinerary.stops.each do |stop| %>
+<div class="card-product mt-3">
+  <%=cl_image_tag stop.sight.photos.first.key %>
+  <div class="card-product-infos">
+    <h2><%= stop.sight.name %></h2>
+    <div class="stop">
+      <p><%= stop.sight.short_description %>
+      <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
+      stop_path(stop),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+    </div>
+  </div>
+</div>
+<% end %>

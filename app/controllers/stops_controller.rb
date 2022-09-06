@@ -22,5 +22,14 @@ class StopsController < ApplicationController
   end
 
   def destroy
+    @stop = Stop.find(params[:id])
+    @itinerary = @stop.itinerary
+    @stop.destroy
+
+    redirect_to itinerary_path(@itinerary), status: :see_other
+  end
+
+  def index
+    @itinerary = Itinerary.find(params[:itinerary_id])
   end
 end

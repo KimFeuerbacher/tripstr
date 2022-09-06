@@ -1,8 +1,9 @@
   <div id="map-container">
     <h1>Here is your trip!</h1>
     <p>You can tap on the stops to see more details about your journey!</p>
-
-
+    <div>
+      <%= link_to "See and edit my stops", itinerary_stops_path(@itinerary)%>
+    </div>
     <div style="width: 100%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"

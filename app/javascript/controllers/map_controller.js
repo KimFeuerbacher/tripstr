@@ -45,7 +45,6 @@ export default class extends Controller {
       <img src="${marker.img}" alt="pic" />
       <h2>${marker.name}</h2>
       <p>${marker.description}</p>
-
     </div>`;
       const popup_down = document.querySelector("#map-container")
       const child = document.createElement("div")

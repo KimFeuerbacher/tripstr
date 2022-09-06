@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :stops, only: :destroy
   resources :itineraries, only: [:show, :index] do
-    resources :stops, only: :show
+    resources :stops, only: [:show, :index]
   end
 
   # preference route

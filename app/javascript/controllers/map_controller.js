@@ -24,10 +24,17 @@ export default class extends Controller {
       const customMarker = document.createElement("div")
       customMarker.className = "marker"
       customMarker.style.backgroundImage = `url('${marker.img}')`
+      customMarker.addEventListener("click", (e) => {
+        this.#popup(marker)
 
-
-      new mapboxgl.Marker(customMarker).setLngLat([marker.lng, marker.lat]).setPopup(popup).addTo(this.map);
+      })
+      new mapboxgl.Marker(customMarker).setLngLat([marker.lng, marker.lat]).addTo(this.map);
+     // console.log(customMarker)
     });
+  }
+
+  #popup(marker) {
+    console.log(marker)
   }
 
   #fitMapToMarkers() {

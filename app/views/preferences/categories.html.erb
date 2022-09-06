@@ -1,24 +1,19 @@
-<p><% session[:city] %></p>
-<p><% session[:duration] %></p>
-
-<div class='container'>
+<div class='container' data-controller='preferences'>
   <h2 class="mt-3">what are your <span class="petrol_word">interests?</span></h2>
-</div>
-  <div class="row">
-    <%= form_tag sight_sorting_path, method: :get, class: "d-flex" do |form| %>
+  <%= form_tag sight_sorting_path, method: :get, class: "row" do |form| %>
       <% @all_categories_instances.each do |category| %>
-        <div class="checkbox col-sm">
+        <div class="checkbox col-6 d-flex justify-content-center mt-4">
           <label class="checkbox-wrapper">
-            <span class="checkbox-tile">
-              <%= check_box_tag 'categories[]', category.title %>
+            <div class="checkbox-tile">
+              <%= check_box_tag 'categories[]', category.title, false, data: { action: "click->preferences#checkAsGreen" }, class:"d-none" %>
               <%= cl_image_tag category.photo.key, class: "size" %>
-            <span class="checkbox-label"><%= category.title %></span>
-            </span>
+            <span class="checkbox-label mt-2"><%= category.title %></span>
+            </div>
           </label>
         </div>
       <% end %>
-      <div>
-        <%= submit_tag "Okay", class: "btn btn-primary" %>
+      <div class="d-flex justify-content-center mt-5">
+        <%= submit_tag "Let's go!", class: "btn category-btn-turq" %>
       </div>
     <% end %>
   </div>

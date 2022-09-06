@@ -35,7 +35,8 @@ class PreferencesController < ApplicationController
     @approved_ids = session[:approved_ids]
 
     # if coming from categories, we pack our values for filtering
-    @city = City.find(session[:city]["city"])
+    # this is also where I had to change my code
+    @city = City.find(session[:city])
     @duration = session[:duration]
     @categories = session[:categories]
 

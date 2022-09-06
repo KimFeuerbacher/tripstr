@@ -1,9 +1,9 @@
 <div class='container'>
-  <h2 class="mt-3"><span class="petrol_word">where</span> are you going?</h2>
+  <h2 class="mt-3"><span class="petrol-word">where</span> are you going?</h2>
   <%# search bar %>
   <div>
     <%= form_with  url: choose_city_path, method: :get do |form| %>
-      <%= form.text_field :city, placeholder: "type a city here", class:"app-italic app-light-text" %>
+      <%= form.text_field :city, placeholder: "type a city here", class:"app-italic app-light-text cities-search-bar" %>
       <%# style this! %>
       <%= form.submit "search", class:'cities-search-btn' %>
     <% end %>
@@ -20,9 +20,7 @@
     <% @cities.each do |city| %>
       <div class="cities-card-category  mb-3">
         <%= link_to cl_image_tag(city.photo.key), choose_duration_path(city: city), class:'cities-card-category' %>
-        <div class="text-wrapper">
-          <h2 class="city-name"> <%= city.name %> </h2>
-        </div>
+        <h2 class="city-name"> <%= city.name %> </h2>
       </div>
     <% end %>
   </div>

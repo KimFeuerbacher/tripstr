@@ -17,11 +17,10 @@ class ItinerariesController < ApplicationController
         description_long: sight.long_description,
         info_window: render_to_string(partial: "info_window", locals: {sight: sight}),
         img: sight.photos.attached? ? helpers.cl_image_path(sight.photos.first.key, width: 150, height: 150, crop: :fill) : "https://i.imgflip.com/6hf6ez.jpg",
+        img2: sight.photos.attached? ? helpers.cl_image_path(sight.photos.first.key, width: 390, height: 146, crop: :fill) : "https://i.imgflip.com/6hf6ez.jpg",
       }
     end
   end
-
-  private
 
   def allow_google_iframe
     response.headers['X-Frame-Options'] = 'ALLOWALL'

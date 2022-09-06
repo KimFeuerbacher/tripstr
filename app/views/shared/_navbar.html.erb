@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%# back button - pending: implement back navigation%>
-    <%= link_to root_path, class: "navbar-brand" do %>
+    <%= link_to 'Back', onclick: "window.history.back();", class: "navbar-brand" do %>
       <%= image_tag "back-icon.png", class:"nav-back-btn" %>
     <% end %>
 
@@ -14,7 +14,7 @@
       <%# user menu %>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <%# replace with person's pic %>
-        <%= image_tag "tripstr.jpg", class:"avatar"%>
+        <%= image_tag "kim.png", class:"avatar"%>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">

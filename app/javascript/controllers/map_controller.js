@@ -42,9 +42,11 @@ export default class extends Controller {
       popup_down.removeChild(existingChild)
     }else{
       const html =   `<div class="map-content">
-      <img src="${marker.img}" alt="pic" />
-      <h2>${marker.name}</h2>
-      <p>${marker.description}</p>
+      <img src="${marker.img2}" class="popup_image" alt="pic" />
+      <div class="container mt-2">
+        <h2>${marker.name}</h2>
+        <p>${marker.description}</p>
+      </div>
 
     </div>`;
       const popup_down = document.querySelector("#map-container")

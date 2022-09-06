@@ -7,6 +7,7 @@ class PreferencesController < ApplicationController
   end
 
   def duration
+    raise
     session[:city] = params[:city]
   end
 

@@ -5,7 +5,7 @@
     <%= form_with  url: choose_city_path, method: :get do |form| %>
       <%= form.text_field :city, placeholder: "type a city here", class:"app-italic app-light-text" %>
       <%# style this! %>
-      <%= form.submit "Go", class:'btn-small' %>
+      <%= form.submit "search", class:'cities-search-btn' %>
     <% end %>
   </div>
 </div>

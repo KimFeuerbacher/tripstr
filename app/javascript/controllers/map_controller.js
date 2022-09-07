@@ -45,6 +45,7 @@ export default class extends Controller {
       <img src="${marker.img2}" class="popup_image" alt="pic" />
       <div class="container mt-2">
         <h2>${marker.name}</h2>
+        <p>${marker.address}<>
         <p>${marker.description}</p>
       </div>
     </div>`;

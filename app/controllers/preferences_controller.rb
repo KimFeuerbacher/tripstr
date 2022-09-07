@@ -1,5 +1,12 @@
 class PreferencesController < ApplicationController
   def cities
+    session[:categories] = nil
+    session[:rejected_ids] = nil
+    session[:approved_ids] = nil
+    session[:duration] = nil
+    session[:city] = nil
+    session[:itinerary_id] = nil
+    session[:sights] = nil
     @cities = City.all
     if params[:city]
       @cities = City.search_by_name(params[:city])

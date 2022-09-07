@@ -14,11 +14,13 @@
   .tripstr-homeimg-wrapper {
     display: flex;
     justify-content: center;
+
   }
 
 
   .tripstr-homeimg {
-    width: 200px;
+    width: 250px;
+
   }
 
   .title {
@@ -84,4 +86,17 @@
   .btn:hover {
     background-color: $petrol;
   }
+
+  header {
+    max-width: 1024px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+   }
+
+ .row {
+    display: flex;
+    overflow: hidden;
+   }
 }

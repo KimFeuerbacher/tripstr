@@ -1,16 +1,21 @@
+<h2 class="m-3"><span class="petrol-word">These</span> are your selected stops:
 
 <% @itinerary.stops.each do |stop| %>
 <div class="card-product mt-3">
   <%=cl_image_tag stop.sight.photos.first.key %>
   <div class="card-product-infos">
-    <h2><%= stop.sight.name %></h2>
+    <h2 class="petrol-word"><%= stop.sight.name %></h2>
     <div class="stop">
-      <p><%= stop.sight.short_description %>
-      <%= link_to '<i class="fa-solid fa-trash"></i>'.html_safe,
+      <div><p><%= stop.sight.short_description %></div>
+      <div class="m-1"><%= link_to '<i class="fa-solid fa-trash red fa-xs"></i>'.html_safe,
       stop_path(stop),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %>
+      %></div>
     </div>
   </div>
 </div>
 <% end %>
+
+<div class="d-flex justify-content-center mt-5">
+    <%= link_to "Back to map", itinerary_path(@itinerary), class:"btn category-btn-turq" %>
+</div>

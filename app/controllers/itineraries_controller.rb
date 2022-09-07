@@ -13,6 +13,7 @@ class ItinerariesController < ApplicationController
         lat: sight.latitude,
         lng: sight.longitude,
         name: sight.name,
+        address: sight.address,
         description: sight.short_description,
         description_long: sight.long_description,
         info_window: render_to_string(partial: "info_window", locals: {sight: sight}),

@@ -26,7 +26,6 @@ class PreferencesController < ApplicationController
   def sight_sorting
     # defining last search criteria
     session[:categories] = params[:categories] if params[:categories]
-
     # are we coming from sight show page? then do this:
     # if there's no rejected_ids on session, create it
     session[:rejected_ids] = [] if session[:rejected_ids].nil?

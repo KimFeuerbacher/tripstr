@@ -2,7 +2,12 @@
   .card-decide {
     display: flex;
     justify-content:space-around;
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100vw;
+    box-shadow: 0px -2px 20px rgba(128, 128, 128, 0.482);
+    padding-top: 3px;
   }
 
   .show-img {
@@ -35,6 +40,10 @@
     p {
 
       font-family: 'Lato';
+    }
+    .size {
+    width: 30px;
+    height: 30px;
     }
   }
 }

@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 5px;
 }
 
 .card-product img {
@@ -35,4 +36,17 @@
 .stop{
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.red {
+  color:$happy-red;
+}
+
+.map_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }

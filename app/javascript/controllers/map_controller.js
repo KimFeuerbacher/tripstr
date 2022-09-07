@@ -43,11 +43,8 @@ export default class extends Controller {
       const html =   `<div class="map-content">
       <img src="${marker.img2}" class="popup_image" alt="pic" />
       <div class="container mt-2">
-        <h2>${marker.name}</h2>
-        <p>${marker.address}</p>
         <div class="info">
           <h2>${marker.name}</h2>
-          <p>${marker.address}</p>
           <div id="ClosePopup"
            <i class="fa-solid fa-xmark"></i>
           </div>

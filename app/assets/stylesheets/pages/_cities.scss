@@ -44,7 +44,8 @@
 
 
 .cities-search-bar {
-  width: 270px;
+  width: 250px;
+  height: 35px;
   padding-left: 10px;
   border: 0.5px $petrol solid;
   border-radius: 5px;
@@ -56,6 +57,7 @@
   background-color: $light-turquoise;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
   transition: background 0.3s ease;
+  border-radius: 5px;
   color: white;
   font-size: 18px;
   font: $headers-font;

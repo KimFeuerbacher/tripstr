@@ -14,14 +14,16 @@
       <%# user menu %>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <%# replace with person's pic %>
-        <%= image_tag "kim.png", class:"avatar"%>
+        <%= image_tag "kim2.png", class:"avatar"%>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
-            <li class="nav-item dropdown ">
-              <p><%= link_to "My itineraries", itineraries_path, class: "dropdown-item" %></p>
-              <p><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></p>
+            <li class="nav-item dropdown">
+              <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
+                <p class="pt-3"><%= link_to "My itineraries", itineraries_path, class: "dropdown-item" %></p>
+                <p><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></p>
+              <%# </div> %>
             </li>
           <% else %>
             <li class="nav-item">

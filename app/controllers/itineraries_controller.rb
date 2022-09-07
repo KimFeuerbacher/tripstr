@@ -22,6 +22,16 @@ class ItinerariesController < ApplicationController
     end
   end
 
+  def update
+    @itinerary = Itinerary.find(params[:id])
+    session[:duration] == "Half day" ? duration = 3 : duration = 6
+    if @itinerary.stops.count < duration
+      redirect_to sight_sorting_path(request.params)
+    else
+      redirect_to itinerary_path(@itinerary)
+    end
+  end
+
   def allow_google_iframe
     response.headers['X-Frame-Options'] = 'ALLOWALL'
   end

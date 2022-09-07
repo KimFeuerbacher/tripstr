@@ -1,5 +1,4 @@
-<h2 class="m-3"><span class="petrol-word">These</span> are your selected stops:
-
+<h2 class="m-3"><span class="petrol-word">These</span> are your selected stops:</h2>
 <% @itinerary.stops.each do |stop| %>
 <div class="card-product mt-3">
   <%=cl_image_tag stop.sight.photos.first.key %>
@@ -9,13 +8,23 @@
       <div><p><%= stop.sight.short_description %></div>
       <div class="m-1"><%= link_to '<i class="fa-solid fa-trash red fa-xs"></i>'.html_safe,
       stop_path(stop),
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-      %></div>
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div>
     </div>
   </div>
 </div>
 <% end %>
 
+<div class= "map_buttons">
 <div class="d-flex justify-content-center mt-5">
-    <%= link_to "Back to map", itinerary_path(@itinerary), class:"btn category-btn-turq" %>
+    <%= link_to "Back to map", itinerary_path(@itinerary), class:"btn btn-turq-medium m-3" %>
+</div>
+
+<% session[:duration] == "Half day" ? duration = 3 : duration = 6 %>
+<% if @itinerary.stops.count < duration %>
+  <div class="d-flex justify-content-center mt-5">
+    <%= form_for @itinerary do |f| %>
+      <%= f.submit "Add Sights", class: "btn btn-turq-medium"  %>
+    <% end %>
+  </div>
+<%end%>
 </div>

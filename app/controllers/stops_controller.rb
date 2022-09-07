@@ -1,4 +1,5 @@
 class StopsController < ApplicationController
+
   def create
     if session[:itinerary_id].present?
       @itinerary = Itinerary.find(session[:itinerary_id])
@@ -7,6 +8,7 @@ class StopsController < ApplicationController
       session[:itinerary_id] = @itinerary.id
     end
     @sight = Sight.find(params[:sight_id])
+
     @stop = Stop.create(itinerary: @itinerary, sight: @sight)
 
     session[:duration] == "Half day" ? duration = 3 : duration = 6
@@ -25,6 +27,7 @@ class StopsController < ApplicationController
     @stop = Stop.find(params[:id])
     @itinerary = Itinerary.find(session[:itinerary_id])
     @sight = Sight.find(@stop.sight_id)
+    session[:rejected_ids] << @sight.id
     @stop.destroy
     if @itinerary.stops.present?
       redirect_to itinerary_path(@itinerary), status: :see_other

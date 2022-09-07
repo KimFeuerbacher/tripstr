@@ -23,10 +23,15 @@ class StopsController < ApplicationController
 
   def destroy
     @stop = Stop.find(params[:id])
-    @itinerary = @stop.itinerary
+    @itinerary = Itinerary.find(session[:itinerary_id])
+    @sight = Sight.find(@stop.sight_id)
     @stop.destroy
-
-    redirect_to itinerary_path(@itinerary), status: :see_other
+    if @itinerary.stops.present?
+      redirect_to itinerary_path(@itinerary), status: :see_other
+    else
+      @itinerary.destroy
+      redirect_to choose_city_path, status: :see_other
+    end
   end
 
   def index

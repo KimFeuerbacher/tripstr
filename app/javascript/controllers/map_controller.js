@@ -27,7 +27,6 @@ export default class extends Controller {
       customMarker.addEventListener("click", (e) => {
         this.#popup(marker)
 
-
       })
       new mapboxgl.Marker(customMarker).setLngLat([marker.lng, marker.lat]).addTo(this.map);
      // console.log(customMarker)
@@ -44,7 +43,12 @@ export default class extends Controller {
       const html =   `<div class="map-content">
       <img src="${marker.img2}" class="popup_image" alt="pic" />
       <div class="container mt-2">
-        <h2>${marker.name}</h2>
+        <div class="info">
+          <h2>${marker.name}</h2>
+          <div id="ClosePopup"
+           <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
         <p>${marker.description}</p>
       </div>
     </div>`;
@@ -55,6 +59,13 @@ export default class extends Controller {
       popup_down.appendChild(child)
     }
 
+    const ele = document.querySelector("#ClosePopup")
+    const another_ele = document.getElementsByClassName('map-content')
+    ele.addEventListener("click", (e) => {
+      // e.preventDefault();
+      const tmp = document.querySelector(".map-popup")
+      tmp.remove()
+    })
   }
 
   #fitMapToMarkers() {

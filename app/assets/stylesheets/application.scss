@@ -14,9 +14,11 @@
 
 // Style present on application.html.css
 .app-background {
+
   height: 900px;
+  //@at-root: cover;
   background-size: cover;
-  background-attachment: fixed;
+
 }
 
 .app-light-text {

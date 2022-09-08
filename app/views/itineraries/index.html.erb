@@ -1,2 +1,27 @@
-<h1>Itineraries#index</h1>
-<p>Find me in app/views/itineraries/index.html.erb</p>
+<h1 class="iti-h1">here are all your city trips, <span class="petrol-word">Kim</span></h1>
+
+<% @user_itineraries.order(created_at: :desc).each do |i| %>
+  <% city = i.sights.first.city %>
+  <% sight = i.sights.first %>
+  <div class="iti-card-product mt-3">
+
+    <%= cl_image_tag sight.photos.first.key %>
+
+    <%# link_to itinerary %>
+    <div class="iti-card-product-infos">
+      <%# insert 'a nice stroll in' %>
+      <h2 class="petrol-word"><%= city.name %></h2>
+      <div class="itinerary-card">
+        <%# fix number after  am/pm,use germany time %>
+        <div><p><%= i.created_at.strftime("Created on %d/%m/%Y") %></p></div>
+        <div><p><%= i.stops.length %></p></div>
+        <%# insert duration %>
+        <div class="m-1">
+          <%= link_to '<i class="fa-solid fa-trash red fa-xs"></i>'.html_safe,
+          itinerary_path(i),
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

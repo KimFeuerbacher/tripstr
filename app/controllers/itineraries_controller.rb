@@ -2,6 +2,9 @@ class ItinerariesController < ApplicationController
   after_action :allow_google_iframe, only: :show
 
   def index
+    # includes(): optimization for the query - this way, the view doesn't fire
+    # many N+1 queries
+    @user_itineraries = current_user.itineraries.includes(:sights, :stops)
   end
 
   def show
@@ -35,5 +38,11 @@ class ItinerariesController < ApplicationController
 
   def allow_google_iframe
     response.headers['X-Frame-Options'] = 'ALLOWALL'
+  end
+
+  def destroy
+    @itinerary = Itinerary.find(params[:id])
+    @itinerary.destroy
+    redirect_to itineraries_path, status: :see_other
   end
 end

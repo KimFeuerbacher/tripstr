@@ -1,13 +1,14 @@
 <div class="container">
-  <h1>here is your <span class="petrol-word">trip</span></h1>
-  <p>You can tap on the stops to see more details about your journey!</p>
-  <div class= "mb-3"><%= link_to "See and edit stops", itinerary_stops_path(@itinerary), class:"btn-petrol-small" %></div>
+  <h1 class= "bold">here is your <span class="petrol-word">trip</span></h1>
+  <p>tap the stops for more details!</p>
+  <div class= "mb-3"><%= link_to "Customize", itinerary_stops_path(@itinerary), class:"btn-turq-small" %></div>
 </div>
+</div>
+
   <div id="map-container">
-    <div style="width: 100%; height: 600px;"
+    <div style="width: 100%; height: 700px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
     </div>
-  </div>

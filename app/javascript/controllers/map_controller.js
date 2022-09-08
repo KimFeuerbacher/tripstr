@@ -44,11 +44,12 @@ export default class extends Controller {
       <img src="${marker.img2}" class="popup_image" alt="pic" />
       <div class="container mt-2">
         <div class="info">
-          <h2>${marker.name}</h2>
+          <h2 class="petrol">${marker.name}</h2>
           <div id="ClosePopup"
            <i class="fa-solid fa-xmark"></i>
           </div>
         </div>
+        <div class="italic"><p>${marker.address}</p></div>
         <p>${marker.description}</p>
       </div>
     </div>`;

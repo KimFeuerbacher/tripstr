@@ -26,6 +26,10 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.card_duration_full:hover {
+  background-color: $petrol;
+  color:white;
+}
 .card_duration_half {
   background-color: #CDF8F8;
   background-color: #CDF8F8;
@@ -38,4 +42,9 @@
   border-radius: 15px;
   flex-direction: column;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.card_duration_half:hover {
+  background-color: $petrol;
+  color:white;
 }

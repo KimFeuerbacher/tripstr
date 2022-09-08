@@ -41,11 +41,11 @@ nature_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662
 nature_parks.photo.attach(io: nature_photo, filename: "Nature&Parks_icon.png", content_type: "image/png")
 
 sights_landmarks = Category.create(title: "Sights & Landmarks")
-sight_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662365763/development/Sights_Landmarks-lg_qlvtra.png')
+sight_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662624979/development/Group_34_1_bpvoii.png')
 sights_landmarks.photo.attach(io: sight_photo, filename: "Sights&Landmarks_icon.png", content_type: "image/png")
 
 nightlife = Category.create(title: "Nightlife")
-nightlife_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662369763/development/Nightlife-lg_qfx6fz.png')
+nightlife_photo = URI.open('https://res.cloudinary.com/dzlfo631q/image/upload/v1662624979/development/Group_37_2_zvuztv.png')
 nightlife.photo.attach(io: nightlife_photo, filename: "nightlife_icon.png", content_type: "image/png")
 
 fun_games = Category.create(title: "Fun & Games")

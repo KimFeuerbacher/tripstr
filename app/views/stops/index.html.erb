@@ -1,27 +1,28 @@
-<h2 class="m-3"><span class="petrol-word">these</span> are your selected stops:</h2>
+<h2 class="m-1 bold">these are your<span class="petrol-word bold"> stops</span>:</h2>
+  <p class="m-1">you can remove stops and exchange them</p>
 <% @itinerary.stops.each do |stop| %>
 <div class="card-product mt-3">
   <%=cl_image_tag stop.sight.photos.first.key %>
   <div class="card-product-infos">
+  <div class="box-1">
     <h2 class="petrol-word"><%= stop.sight.name %></h2>
-    <div class="stop">
-      <div><p><%= stop.sight.short_description %></div>
-      <div class="m-1"><%= link_to '<i class="fa-solid fa-trash red fa-xs"></i>'.html_safe,
+    <div><%= link_to '<i class="fa-solid fa-xmark fa-sx red"></i>'.html_safe,
       stop_path(stop),
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></div>
-    </div>
+  </div>
+      <div><p><%= stop.sight.short_description %></div>
   </div>
 </div>
 <% end %>
 
 <div class= "map_buttons">
-<div class="d-flex justify-content-center mt-5">
+<div class="d-flex justify-content-center mt-3">
     <%= link_to "Back to map", itinerary_path(@itinerary), class:"btn btn-turq-medium m-3" %>
 </div>
 
 <% session[:duration] == "Half day" ? duration = 3 : duration = 6 %>
 <% if @itinerary.stops.count < duration %>
-  <div class="d-flex justify-content-center mt-5">
+  <div class="d-flex justify-content-center mt-3">
     <%= form_for @itinerary do |f| %>
       <%= f.submit "Add Sights", class: "btn btn-turq-medium"  %>
     <% end %>

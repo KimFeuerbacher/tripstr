@@ -16,7 +16,7 @@
     <p >or choose one of our featured cities:</p>
   </div>
   <div class="cities-card-wrapper">
-    <% @cities.each do |city| %>
+    <% @cities.sort_by(&:name).each do |city| %>
       <div class="cities-card-category  mb-3">
         <%= link_to cl_image_tag(city.photo.key), choose_duration_path(city: city), class:'cities-card-category' %>
         <h2 class="city-name"> <%= city.name %> </h2>

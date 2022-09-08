@@ -84,8 +84,13 @@
     }
   }
 
+  //  note about hover across all the scss in this project:
+  // setting several properties without any visual effect
+  // to bypass bootstrap's several hover properties
   .btn:hover {
-    background-color: $petrol;
+    background-color: $light-turquoise;
+    border: 0px !important;
+    transition: none !important;
   }
 
   header {
@@ -94,10 +99,10 @@
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
-   }
+  }
 
- .row {
+  .row {
     display: flex;
     overflow: hidden;
-   }
+  }
 }

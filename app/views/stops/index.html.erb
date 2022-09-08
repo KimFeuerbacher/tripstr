@@ -1,5 +1,5 @@
-<h1 class="m-1 bold">these are your<span class="petrol-word bold"> stops</span>:</h1>
-  <p class="m-1">you can remove stops and exchange them</p>
+<h2 class="m-1 bold">these are your<span class="petrol-word bold"> stops</span>:</h2>
+  <p class="m-1">you can remove stops and add new ones</p>
 <% @itinerary.stops.each do |stop| %>
 <div class="card-product mt-3">
   <%=cl_image_tag stop.sight.photos.first.key %>

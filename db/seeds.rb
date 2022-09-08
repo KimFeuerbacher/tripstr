@@ -16,9 +16,6 @@ Category.destroy_all
 
 #Cities
 
-munich = City.create(name: "Munich")
-m = URI.open('https://cdn.prod.www.spiegel.de/images/0783d46d-0001-0004-0000-000000016835_w948_r1.778_fpx54_fpy70.jpg')
-munich.photo.attach(io: m, filename: "Munich.png", content_type: "image/png")
 
 amsterdam = City.create(name: "Amsterdam")
 a = URI.open('https://storage.googleapis.com/stateless-bs33zrig-myraidbox-d/2021/12/Amsterdam-neu-e1638454521123.jpg')
@@ -35,6 +32,11 @@ barcelona.photo.attach(io: b, filename: "Barcelona.png", content_type: "image/pn
 london = City.create(name: "London")
 l = URI.open('https://phototravellers.de/wp-content/uploads/2020/03/intro-london-sehenswuerdigkeiten.jpg')
 london.photo.attach(io: l, filename: "Barcelona.png", content_type: "image/png")
+
+
+munich = City.create(name: "Munich")
+m = URI.open('https://cdn.prod.www.spiegel.de/images/0783d46d-0001-0004-0000-000000016835_w948_r1.778_fpx54_fpy70.jpg')
+munich.photo.attach(io: m, filename: "Munich.png", content_type: "image/png")
 
 #Categories
 nature_parks = Category.create(title: "Nature & Parks")

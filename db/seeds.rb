@@ -7,6 +7,7 @@ require "open-uri"
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "seeding"
+
 Stop.destroy_all
 Sight.destroy_all
 Itinerary.destroy_all
@@ -249,3 +250,90 @@ sea_life_photo_three = URI.open('https://www.visitsealife.com/muenchen/media/4qf
 sea_life.photos.attach(io: sea_life_photo, filename: "SEA Life.png", content_type: "image/png")
 sea_life.photos.attach(io: sea_life_photo_two, filename: "SEA Life_two.png", content_type: "image/png")
 sea_life.photos.attach(io: sea_life_photo_three, filename: "SEA Life_three.png", content_type: "image/png")
+
+puts "seeding new cities and Rio sights"
+
+#new seeds
+rio = City.create(name: "Rio de Janeiro")
+r = URI.open('https://www.melhoresdestinos.com.br/wp-content/uploads/2019/08/rio-de-janeiro-capa2019-01.jpg')
+rio.photo.attach(io: r, filename: "Rio de Janeiro.png", content_type: "image/png")
+
+cape_town = City.create(name: "Cape Town")
+ct = URI.open('https://traveler.marriott.com/wp-content/uploads/2021/04/GI_86362200_VictoriaWaterfrontSA_RF.jpg')
+cape_town.photo.attach(io: ct, filename: "Cape Town.png", content_type: "image/png")
+
+buenos_aires = City.create(name: "Buenos Aires")
+ba = URI.open('https://cdnstatic8.com/coisosonthego.com/wp-content/uploads/2019/01/O-que-fazer-em-Buenos-Aires-Plaza-del-Congreso-e-Congresso-Nacional-da-Argentina-vistos-do-Palacio-Barolo.jpg')
+buenos_aires.photo.attach(io: ba, filename: "Buenos Aires.png", content_type: "image/png")
+
+new_york = City.create(name: "New York")
+ny = URI.open('https://blog-api.culturalcare.world//app/uploads/sites/15/2019/04/nyc-header.jpg')
+new_york.photo.attach(io: ny, filename: "New York.png", content_type: "image/png")
+
+berlin = City.create(name: "Berlin")
+brl = URI.open('https://assets-prd.formulae.cloud/-/media/images/championship/race-calendar/berlin/berlin-header.png')
+berlin.photo.attach(io: brl, filename: "Berlin.png", content_type: "image/png")
+
+kerala = City.create(name: "Kerala")
+krl = URI.open('https://www.onde-e-quando.net/site/images/illustration/kerala_977.jpg')
+kerala.photo.attach(io: krl, filename: "Kerala.png", content_type: "image/png")
+
+ubud = City.create(name: "Ubud")
+ubu = URI.open('https://www.vounajanela.com/wp-content/uploads/2019/05/onde-ficar-em-ubud-3.jpg')
+ubud.photo.attach(io: ubu, filename: "Ubud.png", content_type: "image/png")
+
+singapore = City.create(name: "Singapore")
+sing = URI.open('https://a.cdn-hotels.com/gdcs/production93/d422/118f3050-41af-4c7b-9651-3428a0e894d9.jpg')
+singapore.photo.attach(io: sing, filename: "Singapore.png", content_type: "image/png")
+
+
+
+
+#Rio sights
+sugarloaf = Sight.create(name: "Pão de Açúcar", latitude: -22.94874426684942, longitude: -43.154489914165154, address: "Morro da Urca, 22290-240 Rio de Janeiro", short_description: "An iconic sight in Rio de Janeiro.", long_description: "See Rio at its best. The Sugarloag Mountain is one the most beautiful attractions in Rio de Janeiro and one of the most famous in Brazil. An amazing touristic landmark, it offers a fun cabe car ride and gorgeous views.", city: rio, category: sights_landmarks)
+sugarloaf_photo = URI.open('https://imgsapp.em.com.br/app/noticia_127983242361/2022/05/31/1370072/bondinho-do-pao-de-acucar_1_208849.jpg')
+sugarloaf_photo_two = URI.open('https://a.cdn-hotels.com/gdcs/production186/d1087/84949bcf-a088-4d02-bbcf-8a95d90f3415.jpg')
+sugarloaf_photo_three = URI.open('https://www.melhoresdestinos.com.br/wp-content/uploads/2019/02/passagens-aereas-rio-de-janeiro-capa2019-01.jpg')
+sugarloaf.photos.attach(io: sugarloaf_photo, filename: "Sugarloaf.png", content_type: "image/png")
+sugarloaf.photos.attach(io: sugarloaf_photo_two, filename: "Sugarloaf_two.png", content_type: "image/png")
+sugarloaf.photos.attach(io: sugarloaf_photo_three, filename: "Sugarloaf_three.png", content_type: "image/png")
+
+selaron = Sight.create(name: "Escadaria Selarón", latitude: -22.915035349322064, longitude: -43.17917141587194, address: "R. Manuel Carneiro, Lapa 20241-120 Rio de Janeiro", short_description: "We challenge you to find a prettier stairway.", long_description: "Chilean artist Jorge Selaron started this staircase, and international visitors gifted him with tiles from all over the world. Nowadays there are more than 2000 tiles from around 60 countries!", city: rio, category: sights_landmarks)
+selaron_photo = URI.open('https://freewalkertours.com/wp-content/uploads/Escalera-Selaron5.jpeg')
+selaron_photo_two = URI.open('https://panoramadeviagem.com.br/wp-content/uploads/2019/07/escadaria-selaron.jpg')
+selaron_photo_three = URI.open('https://diariodorio.com/wp-content/uploads/2019/10/selaron.jpg')
+selaron.photos.attach(io: selaron_photo, filename: "selaron.png", content_type: "image/png")
+selaron.photos.attach(io: selaron_photo_two, filename: "selaron_two.png", content_type: "image/png")
+selaron.photos.attach(io: selaron_photo_three, filename: "selaron_three.png", content_type: "image/png")
+
+corcovado = Sight.create(name: "Christ the Redeemer", latitude: -22.9515214852938, longitude: -43.21127508347187, address: "Alto da Boa vista, 20241-120 Rio de Janeiro", short_description: "Cristo Redentor guards beautiful Guanabara Bay.", long_description: "Right atop the City, Christ the Redeemer watches over the cariocas. It is the biggest and most famous Art Deco sculpture in the world, and offers sprawling views of this gorgeous city.", city: rio, category: sights_landmarks)
+corcovado_photo = URI.open('https://formaconhecer.com.br/wp-content/uploads/2019/05/saida-pedagogica-rio-de-janeiro-corcovado-cristo-redentor-01.png')
+corcovado_photo_two = URI.open('https://cdn.lugares.eco.br/upload/dn_arquivo/2021/11/reveilon-corcovado.jpg')
+corcovado_photo_three = URI.open('https://cdn.diariodoturismo.com.br/wp-content/uploads/2021/08/WhatsApp-Image-2021-08-25-at-07.41.36.jpeg')
+corcovado.photos.attach(io: corcovado_photo, filename: "corcovado.png", content_type: "image/png")
+corcovado.photos.attach(io: corcovado_photo_two, filename: "corcovado_two.png", content_type: "image/png")
+corcovado.photos.attach(io: corcovado_photo_three, filename: "corcovado_three.png", content_type: "image/png")
+
+santa = Sight.create(name: "Santa Teresa", latitude: -22.92463339715706, longitude: -43.19290384707953, address: "Santa Teresa, 20201-100 Rio de Janeiro", short_description: "The Montmartre of Rio de Janeiro.", long_description: "A charming bohemian neighborhood with so much to see and do. Artists, musicians and general partygoers make the hilly streets come alive 7 days a week, 24/7.", city: rio, category: nightlife)
+santa_photo = URI.open('https://static.wixstatic.com/media/29806e_375c4fd904994b30a3ae0a86f7760264~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_90,usm_0.66_1.00_0.01/29806e_375c4fd904994b30a3ae0a86f7760264~mv2.jpg')
+santa_photo_two = URI.open('https://a.travel-assets.com/findyours-php/viewfinder/images/res70/191000/191427-Santa-Teresa.jpg')
+santa_photo_three = URI.open('https://a.cdn-hotels.com/gdcs/production39/d1024/0f2f7512-33a5-4be0-bcf1-80ce0cdbb244.jpg')
+santa.photos.attach(io: santa_photo, filename: "santa.png", content_type: "image/png")
+santa.photos.attach(io: santa_photo_two, filename: "santa_two.png", content_type: "image/png")
+santa.photos.attach(io: santa_photo_three, filename: "santa_three.png", content_type: "image/png")
+
+ipanema = Sight.create(name: "Ipanema Beach", latitude: -22.98662045970758, longitude: -43.204665289343595, address: "Ipanema, 22420-004 Rio de Janeiro", short_description: "The jewel of Rio de Janeiro.", long_description: "Play altinho at the beach, drink mate, lounge at Posto 8 and get a sense of life in Rio at its best, with Ipanema's cross-section of different lifestyles, chic boutiques and luxurious buildings.", city: rio, category: wellness)
+ipanema_photo = URI.open('https://img.freepik.com/premium-photo/aerial-image-ipanema-beach-rio-de-janeiro-4k_63135-630.jpg')
+ipanema_photo_two = URI.open('https://www.viajali.com.br/wp-content/uploads/2020/05/praia-de-ipanema-11.jpg')
+ipanema_photo_three = URI.open('https://riotur.rio/wp-content/uploads/2015/12/8269992674_547387cc44_o.jpg')
+ipanema.photos.attach(io: ipanema_photo, filename: "ipanema.png", content_type: "image/png")
+ipanema.photos.attach(io: ipanema_photo_two, filename: "ipanema_two.png", content_type: "image/png")
+ipanema.photos.attach(io: ipanema_photo_three, filename: "ipanema_three.png", content_type: "image/png")
+
+maracana = Sight.create(name: "Maracanã Stadium", latitude: -22.911891487807292, longitude: -43.230166528836534, address: "Av. Pres. Castelo Branco 3, 20271-130 Rio de Janeiro", short_description: "Legendary football stadium.", long_description: "Home to iconic sports moments, Maracanã is a true temple of footbal. Watching heated matches here, like the traditional Fla x Flu, is a truly unforgettable experience .", city: rio, category: fun_games)
+maracana_photo = URI.open('https://www.guiadasemana.com.br/contentFiles/image/2019/06/VEN/principal/91427_w840h0_1560271049shutterstock-380047378-maracana-by-marchello74.jpg')
+maracana_photo_two = URI.open('https://sandertour.com.br/sandertour/img/sander-tour-agencia-de-viagem-rede-social-maracana-rio-de-janeiro-rj-5f46714c8af85_0.jpg')
+maracana_photo_three = URI.open('https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2020/02/flatrocida-1000x568.jpg')
+maracana.photos.attach(io: maracana_photo, filename: "maracana.png", content_type: "image/png")
+maracana.photos.attach(io: maracana_photo_two, filename: "maracana_two.png", content_type: "image/png")
+maracana.photos.attach(io: maracana_photo_three, filename: "maracana_three.png", content_type: "image/png")

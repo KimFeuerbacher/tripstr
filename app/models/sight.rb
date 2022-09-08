@@ -6,5 +6,5 @@ class Sight < ApplicationRecord
   validates :name, :latitude, :longitude, :address, presence: true, uniqueness: true
   validates :short_description, :long_description, presence: true
   reverse_geocoded_by :latitude, :longitude
-  after_validation :reverse_geocode
+  #after_validation :reverse_geocode
 end

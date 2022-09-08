@@ -1,15 +1,17 @@
 .iti-card-product {
   overflow: hidden;
-  height: 200px;
+  height: 150px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
 
   img {
-    height: 100%;
-    width: 300px;
+    // height: 100%;
+    width: 230px;
     object-fit: cover;
   }
 
@@ -23,20 +25,32 @@
     font-size: 12px;
     line-height: 1.4;
     opacity: .7;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     margin-top: 8px;
+    font-style: italic;
   }
 }
 
 .iti-card-product .iti-card-product-infos {
-  padding: 16px;
+  margin-left: 10px;
+  margin-right: 7px;
 }
 
 .itinerary-card{
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
+
+  .iti-button-wrapper {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+  }
+
 }
 
 .iti-h1 {

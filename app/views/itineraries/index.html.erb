@@ -4,7 +4,9 @@
   <% city = i.sights.first.city %>
   <% sight = i.sights.first %>
   <div class="iti-card-product mt-3">
-    <%= link_to cl_image_tag(sight.photos.first.key), itinerary_path(i) %>
+    <div class='iti-img-wrapper'>
+      <%= link_to cl_image_tag(sight.photos.first.key), itinerary_path(i) %>
+    </div>
     <div class="iti-card-product-infos">
       <h2 class="petrol-word">
         <%= ["a nice stroll in ", "fun day in ", "enjoy ", "discover ", "my adventure in ", "cool sights in ", "the best of ", "my city tour in "].sample + city.name %>
@@ -12,19 +14,15 @@
       <div class="itinerary-card">
         <p><%= i.stops.length == 3 ? "half day city tour" : "full day city tour" %></p>
         <p><%= i.created_at.strftime("created on %d/%m/%Y") %></p>
-        <div class="iti-button-wrapper">
-          <%= link_to "delete",
-          itinerary_path(i),
-          class:'btn-red-xs',
-          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-        </div>
+        <%= link_to '<i class="fa-solid fa-xmark fa-sx red"></i>'.html_safe,
+        itinerary_path(i),
+        class:"iti-delete-button",
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
       </div>
     </div>
   </div>
 <% end %>
+
 <div class="d-flex justify-content-center mt-3">
-    <%= link_to "Create a new adventure", choose_city_path, class:"back btn m-3" %>
-</div>
-<%# start a new route button %>
-<div>
+    <%= link_to "create a new adventure", choose_city_path, class:"iti-btn-petrol" %>
 </div>

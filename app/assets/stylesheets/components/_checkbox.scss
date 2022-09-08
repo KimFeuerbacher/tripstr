@@ -18,8 +18,6 @@
   }
 }
 
-
-
 .checkbox-group-legend {
   font-size: 1.5rem;
   font-weight: 700;
@@ -55,7 +53,6 @@
     // }
   }
 
-
   &:focus + .checkbox-tile {
     // border-color: #2260ff;
     box-shadow: 0 5px 10px rgba(#000, 0.1), 0 0 0 4px #b5c9fc;
@@ -75,7 +72,7 @@
   height: 20vh;
   border-radius: 0.5rem;
   // border: 2px solid #b5bfd9;
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.9);
   box-shadow: 0 5px 10px rgba(#000, 0.1);
   transition: 0.15s ease;
   cursor: pointer;

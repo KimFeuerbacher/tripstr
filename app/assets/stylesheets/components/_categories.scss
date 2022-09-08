@@ -55,12 +55,12 @@ color: #007691;
 }
 
 .background-green {
-  background-color: rgba(4, 222, 220, 0.25) !important;
+  background-color: rgba(194, 254, 252,0.7) !important;
   border: $light-turquoise 1px solid !important;
 }
 
 
-.category-btn-turq {
+.category-btn-petrol {
   width: 150px;
   height: 54px;
   background-color: rgba(0,118,145,0.75);
@@ -77,6 +77,8 @@ color: #007691;
   }
 }
 
-.category-btn-turq:hover {
+.category-btn-petrol:hover {
   background-color: rgba(0,118,145,0.75);
+  color: white;
+  border: 0px !important
 }

@@ -18,13 +18,13 @@
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <%# <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown"> %>
-                <p class="pt-3"><%= link_to "My itineraries", itineraries_path, class: "dropdown-item" %></p>
-                <p><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></p>
+                <p class="pt-3"><%= link_to "my itineraries", itineraries_path, class: "dropdown-item" %></p>
+                <p><%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></p>
               <%# </div> %>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+              <%= link_to "sign in", new_user_session_path, class: "nav-link" %>
             </li>
           <% end %>
         </ul>

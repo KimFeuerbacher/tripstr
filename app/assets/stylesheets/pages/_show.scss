@@ -23,23 +23,29 @@
   }
 
   .card-description {
+    margin-bottom: 75px !important;
+
     .description {
       display: flex;
       justify-content: space-between;
-    h1{
+
+      h1{
         font-family: 'Lato';
         font-size: 30px;
         font-weight: bold;
       }
     }
+
     #description{
       font-family: 'Lato';
       color: #007691;
       font-size: 18px;
     }
+
     p {
       font-family: 'Lato';
     }
+
     .size {
     position:absolute;
     top:427px;

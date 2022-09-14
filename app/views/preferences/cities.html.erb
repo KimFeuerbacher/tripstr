@@ -13,7 +13,8 @@
 <%# city cards %>
 <div>
   <div class="container mt-3">
-    <p >or choose one of our featured cities:</p>
+    <p >or choose one of our featured cities:<br><span class="italic">(currently only Munich and Rio can be chosen from the list)</span></p>
+
   </div>
   <div class="cities-card-wrapper">
     <% @cities.sort_by(&:name).each do |city| %>

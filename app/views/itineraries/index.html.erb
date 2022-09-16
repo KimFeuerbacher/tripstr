@@ -1,4 +1,4 @@
-<h1 class="iti-h1">here are all your city trips, <span class="petrol-word">Kim</span></h1>
+<h1 class="iti-h1">here are all your <span class="petrol-word">city trips</span></h1>
 
 <% @user_itineraries.order(created_at: :desc).each do |i| %>
   <% city = i.sights.first.city %>
